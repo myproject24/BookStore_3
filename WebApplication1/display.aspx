@@ -238,12 +238,14 @@
                                     </tr>
                                     <tr>
                                         <td class="table_rowleft">
-                                            <asp:LinkButton ID="LinkButton2" runat="server"
-                                                Font-Underline="False" Style="font-weight: 700; color: Black" CommandName="ViewDetails" CommandArgument='<%#Eval("BookPath") %>' BackColor="#FF9933">Read Online</asp:LinkButton>
+                                            <asp:Button runat="server" CommandArgument='<%#Eval("BookPath") %>' Style="font-weight: 700; color: Black" Text="Read Online" OnCommand="readClicked" />
+                                            <%--<asp:LinkButton ID="LinkButton2" runat="server"
+                                                Font-Underline="False" Style="font-weight: 700; color: Black" CommandName="ViewDetails" CommandArgument='<%#Eval("BookPath") %>' BackColor="#FF9933" OnClick="readClicked()">Read Online</asp:LinkButton>--%>
                                         </td>
                                         <td class="table_rowright">
-                                            <asp:LinkButton ID="LinkButton1" runat="server"
-                                                Font-Underline="False" Style="font-weight: 700; color: Black" CommandName="ViewDetails" CommandArgument='<%#Eval("BookPath") %>' BackColor="#FF9933">Buy Now</asp:LinkButton>
+                                            <asp:Button runat="server" CommandArgument='<%#Eval("BookPath") %>' Style="font-weight: 700; color: Black" Text="Buy Now;" OnCommand="readClicked" />
+                                            <%--<asp:LinkButton ID="LinkButton1" runat="server"
+                                                Font-Underline="False" Style="font-weight: 700; color: Black" CommandName="ViewDetails" CommandArgument='<%#Eval("BookPath") %>' BackColor="#FF9933">Buy Now</asp:LinkButton>--%>
                                         </td>
                                     </tr>
                                 </table>

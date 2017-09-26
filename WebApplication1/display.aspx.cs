@@ -4,6 +4,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -14,7 +15,8 @@ namespace WebApplication1
     {
         static string stateIs = "Karnataka";
         static string mediumIs = "Native";
-        SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\Naveev\\Documents\\Visual Studio 2017\\Projects\\WebApplication1\\WebApplication1\\App_Data\\Database1.mdf\"; Integrated Security=True");
+        SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\Naveev\\Documents\\Visual Studio 2017\\Projects\\BookStore_3\\WebApplication1\\App_Data\\Database1.mdf\"; Integrated Security=True");
+
         protected void Page_Load(object sender, EventArgs e)
         {
             string mystr;
@@ -40,6 +42,19 @@ namespace WebApplication1
             }
         }
 
+        protected void readClicked(object sender, CommandEventArgs e)
+        {
+            string FilePath = e.CommandArgument.ToString();
+            //string FilePath = "https://github.com/na205/C-and-Cpp-Programs/raw/master/Extra%20material/Dynamic%20Programming/DynamicProgramming.pdf";
+            WebClient User = new WebClient();
+            Byte[] FileBuffer = User.DownloadData(FilePath);
+            if (FileBuffer != null)
+            {
+                Response.ContentType = "application/pdf";
+                Response.AddHeader("content-length", FileBuffer.Length.ToString());
+                Response.BinaryWrite(FileBuffer);
+            }
+        }
         protected void StateNameChanged(object sender, EventArgs e)
         {
             stateIs = sender.ToString();
@@ -61,7 +76,6 @@ namespace WebApplication1
 
         protected void GetData()
         {
-            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\Naveev\\Documents\\Visual Studio 2017\\Projects\\WebApplication1\\WebApplication1\\App_Data\\Database1.mdf\"; Integrated Security=True");
             string mystr;
             if (Request.QueryString["Id"] != null)
             {
@@ -93,7 +107,7 @@ namespace WebApplication1
                 if (mystr[1] == '0')
                 {
                     //SqlCommand cmd = new SqlCommand("select * from SchoolState where StateName = " + stateIs + " Class = " + classIs + " MediumName = " + mediumIs, con);
-                    SqlCommand cmd = new SqlCommand("select * from MiscBooks", con);
+                    SqlCommand cmd = new SqlCommand("select * from MiscBooks", conn);
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     DataSet ds = new DataSet();
                     da.Fill(ds);
@@ -102,7 +116,7 @@ namespace WebApplication1
                 }
                 else if (mystr[1] == '1')
                 {
-                    SqlCommand cmd = new SqlCommand("select * from SchoolCBSE where Class = " + classIs, con);
+                    SqlCommand cmd = new SqlCommand("select * from SchoolCBSE where Class = " + classIs, conn);
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     DataSet ds = new DataSet();
                     da.Fill(ds);
@@ -111,7 +125,7 @@ namespace WebApplication1
                 }
                 else
                 {
-                    SqlCommand cmd = new SqlCommand("select * from SchoolICSE where Class = " + classIs, con);
+                    SqlCommand cmd = new SqlCommand("select * from SchoolICSE where Class = " + classIs, conn);
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     DataSet ds = new DataSet();
                     da.Fill(ds);
