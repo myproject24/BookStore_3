@@ -11,15 +11,28 @@ namespace WebApplication1
 {
     public partial class register : System.Web.UI.Page
     {
-        SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\Naveev\\Documents\\Visual Studio 2017\\Projects\\WebApplication1\\WebApplication1\\App_Data\\Database1.mdf\"; Integrated Security=True");
+        SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\Naveev\\Documents\\Visual Studio 2017\\Projects\\BookStore_3\\WebApplication1\\App_Data\\Database1.mdf\"; Integrated Security=True");
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["Username"] != null)
+            {
+                withsession.Visible = true;
+                withoutsession.Visible = false;
+            }
+            else
+            {
+                withsession.Visible = false;
+                withoutsession.Visible = true;
+            }
         }
+
         protected void signoutBtn_Clicked(object sender, EventArgs e)
         {
-            withoutsession.Visible = false;
+            withsession.Visible = false;
+            withoutsession.Visible = true;
+            Session.RemoveAll();
         }
+
         protected void btnSend_Click(object sender, EventArgs e)
         {
             conn.Open();

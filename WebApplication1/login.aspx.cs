@@ -12,7 +12,7 @@ namespace WebApplication1
 {
     public partial class login : System.Web.UI.Page
     {
-        SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\Naveev\\Documents\\Visual Studio 2017\\Projects\\WebApplication1\\WebApplication1\\App_Data\\Database1.mdf\"; Integrated Security=True");
+        SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\Naveev\\Documents\\Visual Studio 2017\\Projects\\BookStore_3\\WebApplication1\\App_Data\\Database1.mdf\"; Integrated Security=True");
         protected void Page_Load(object sender, EventArgs e)
         {
             if(Session["Username"]!=null)
@@ -20,15 +20,29 @@ namespace WebApplication1
                 withsession.Visible = true;
                 withoutsession.Visible = false;
             }
+            else
+            {
+                withsession.Visible = false;
+                withoutsession.Visible = true;
+            }
         }
+
+        protected void signoutBtn_Clicked(object sender, EventArgs e)
+        {
+            withsession.Visible = false;
+            withoutsession.Visible = true;
+            Session.RemoveAll();
+        }
+
         protected void Unnamed_LoggingOut(object sender, EventArgs e)
         {
 
         }
+
         protected void btnSend_Click(object sender, EventArgs e)
         {
             conn.Open();
-            SqlCommand cmd = new SqlCommand("select * from LoginInfo where Username=@username and Password=@password", conn);
+            SqlCommand cmd = new SqlCommand("select * from RegisterInfo where Username=@username and Password=@password", conn);
             cmd.Parameters.AddWithValue("@username", UserName.Text);
             cmd.Parameters.AddWithValue("@password", Password.Text);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -36,7 +50,7 @@ namespace WebApplication1
             da.Fill(dt);
             if (dt.Rows.Count > 0)
             {
-                Session["Username"] = UserName.Text;
+                Session["Username"] = dt.Rows[0].Field<string>("FirstName"); ;
                 Response.Redirect("display.aspx");
                 Session.RemoveAll();
             }
@@ -46,16 +60,12 @@ namespace WebApplication1
                 ErrorMessage.Visible = true;
             }
         }
+
         protected void btnSignUp_Click(object sender, EventArgs e)
         {
             Response.Redirect("register.aspx");
         }
-
-        protected void signoutBtn_Clicked(object sender, EventArgs e)
-        {
-            withoutsession.Visible = false;
-        }
-
+        
         protected void btnSignIn_Click(object sender, EventArgs e)
         {
             Response.Redirect("login.aspx");

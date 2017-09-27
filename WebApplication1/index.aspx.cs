@@ -19,6 +19,11 @@ namespace WebApplication1
                 withsession.Visible = true;
                 withoutsession.Visible = false;
             }
+            else
+            {
+                withsession.Visible = false;
+                withoutsession.Visible = true;
+            }
         }
         protected void func123(object sender, EventArgs e)
         {

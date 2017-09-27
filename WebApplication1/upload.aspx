@@ -94,73 +94,73 @@
                                         <li class="dropdown-submenu">
                                             <a href="#">Electronics & Comm Engg</a>
                                             <ul class="dropdown-menu">
-                                                <li><a href="#">1st Semester</a></li>
-                                                <li><a href="#">2nd Semester</a></li>
-                                                <li><a href="#">3rd Semester</a></li>
-                                                <li><a href="#">4th Semester</a></li>
-                                                <li><a href="#">5th Semester</a></li>
-                                                <li><a href="#">6th Semester</a></li>
-                                                <li><a href="#">7th Semester</a></li>
+                                                <li><a href="display.aspx?Id=100">1st Semester</a></li>
+                                                <li><a href="display.aspx?Id=101">2nd Semester</a></li>
+                                                <li><a href="display.aspx?Id=102">3rd Semester</a></li>
+                                                <li><a href="display.aspx?Id=103">4th Semester</a></li>
+                                                <li><a href="display.aspx?Id=104">5th Semester</a></li>
+                                                <li><a href="display.aspx?Id=105">6th Semester</a></li>
+                                                <li><a href="display.aspx?Id=106">7th Semester</a></li>
                                             </ul>
                                         </li>
                                         <li class="dropdown-submenu">
                                             <a href="#">Mechanical Engg</a>
                                             <ul class="dropdown-menu">
-                                                <li><a href="#">1st Semester</a></li>
-                                                <li><a href="#">2nd Semester</a></li>
-                                                <li><a href="#">3rd Semester</a></li>
-                                                <li><a href="#">4th Semester</a></li>
-                                                <li><a href="#">5th Semester</a></li>
-                                                <li><a href="#">6th Semester</a></li>
-                                                <li><a href="#">7th Semester</a></li>
+                                                <li><a href="display.aspx?Id=110">1st Semester</a></li>
+                                                <li><a href="display.aspx?Id=111">2nd Semester</a></li>
+                                                <li><a href="display.aspx?Id=112">3rd Semester</a></li>
+                                                <li><a href="display.aspx?Id=113">4th Semester</a></li>
+                                                <li><a href="display.aspx?Id=114">5th Semester</a></li>
+                                                <li><a href="display.aspx?Id=115">6th Semester</a></li>
+                                                <li><a href="display.aspx?Id=116">7th Semester</a></li>
                                             </ul>
                                         </li>
                                         <li class="dropdown-submenu">
                                             <a href="#">Civil Engg</a>
                                             <ul class="dropdown-menu">
-                                                <li><a href="#">1st Semester</a></li>
-                                                <li><a href="#">2nd Semester</a></li>
-                                                <li><a href="#">3rd Semester</a></li>
-                                                <li><a href="#">4th Semester</a></li>
-                                                <li><a href="#">5th Semester</a></li>
-                                                <li><a href="#">6th Semester</a></li>
-                                                <li><a href="#">7th Semester</a></li>
+                                                <li><a href="display.aspx?Id=120">1st Semester</a></li>
+                                                <li><a href="display.aspx?Id=121">2nd Semester</a></li>
+                                                <li><a href="display.aspx?Id=122">3rd Semester</a></li>
+                                                <li><a href="display.aspx?Id=123">4th Semester</a></li>
+                                                <li><a href="display.aspx?Id=124">5th Semester</a></li>
+                                                <li><a href="display.aspx?Id=125">6th Semester</a></li>
+                                                <li><a href="display.aspx?Id=126">7th Semester</a></li>
                                             </ul>
                                         </li>
                                         <li class="dropdown-submenu">
                                             <a href="#">Electrical Engg</a>
                                             <ul class="dropdown-menu">
-                                                <li><a href="#">1st Semester</a></li>
-                                                <li><a href="#">2nd Semester</a></li>
-                                                <li><a href="#">3rd Semester</a></li>
-                                                <li><a href="#">4th Semester</a></li>
-                                                <li><a href="#">5th Semester</a></li>
-                                                <li><a href="#">6th Semester</a></li>
-                                                <li><a href="#">7th Semester</a></li>
+                                                <li><a href="display.aspx?Id=130">1st Semester</a></li>
+                                                <li><a href="display.aspx?Id=131">2nd Semester</a></li>
+                                                <li><a href="display.aspx?Id=132">3rd Semester</a></li>
+                                                <li><a href="display.aspx?Id=133">4th Semester</a></li>
+                                                <li><a href="display.aspx?Id=134">5th Semester</a></li>
+                                                <li><a href="display.aspx?Id=135">6th Semester</a></li>
+                                                <li><a href="display.aspx?Id=136">7th Semester</a></li>
                                             </ul>
                                         </li>
                                         <li class="dropdown-submenu">
                                             <a href="#">Chemical Engg</a>
                                             <ul class="dropdown-menu">
-                                                <li><a href="#">1st Semester</a></li>
-                                                <li><a href="#">2nd Semester</a></li>
-                                                <li><a href="#">3rd Semester</a></li>
-                                                <li><a href="#">4th Semester</a></li>
-                                                <li><a href="#">5th Semester</a></li>
-                                                <li><a href="#">6th Semester</a></li>
-                                                <li><a href="#">7th Semester</a></li>
+                                                <li><a href="display.aspx?Id=140">1st Semester</a></li>
+                                                <li><a href="display.aspx?Id=141">2nd Semester</a></li>
+                                                <li><a href="display.aspx?Id=142">3rd Semester</a></li>
+                                                <li><a href="display.aspx?Id=143">4th Semester</a></li>
+                                                <li><a href="display.aspx?Id=144">5th Semester</a></li>
+                                                <li><a href="display.aspx?Id=145">6th Semester</a></li>
+                                                <li><a href="display.aspx?Id=146">7th Semester</a></li>
                                             </ul>
                                         </li>
                                         <li class="dropdown-submenu">
                                             <a href="#">Computer Sci Engg</a>
                                             <ul class="dropdown-menu">
-                                                <li><a href="#">1st Semester</a></li>
-                                                <li><a href="#">2nd Semester</a></li>
-                                                <li><a href="#">3rd Semester</a></li>
-                                                <li><a href="#">4th Semester</a></li>
-                                                <li><a href="#">5th Semester</a></li>
-                                                <li><a href="#">6th Semester</a></li>
-                                                <li><a href="#">7th Semester</a></li>
+                                                <li><a href="display.aspx?Id=150">1st Semester</a></li>
+                                                <li><a href="display.aspx?Id=151">2nd Semester</a></li>
+                                                <li><a href="display.aspx?Id=152">3rd Semester</a></li>
+                                                <li><a href="display.aspx?Id=153">4th Semester</a></li>
+                                                <li><a href="display.aspx?Id=154">5th Semester</a></li>
+                                                <li><a href="display.aspx?Id=155">6th Semester</a></li>
+                                                <li><a href="display.aspx?Id=156">7th Semester</a></li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -168,12 +168,12 @@
                                 <li class="dropdown-submenu">
                                     <a tabindex="-1" href="#">Masters</a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="#">Electronics & Comm Engg</a></li>
-                                        <li><a href="#">Mechanical Engg</a></li>
-                                        <li><a href="#">Civil Engg</a></li>
-                                        <li><a href="#">Electrical Engg</a></li>
-                                        <li><a href="#">Chemical Engg</a></li>
-                                        <li><a href="#">Computer Sci Engg</a></li>
+                                        <li><a href="display.aspx?Id=200">Electronics & Comm Engg</a></li>
+                                        <li><a href="display.aspx?Id=201">Mechanical Engg</a></li>
+                                        <li><a href="display.aspx?Id=202">Civil Engg</a></li>
+                                        <li><a href="display.aspx?Id=203">Electrical Engg</a></li>
+                                        <li><a href="display.aspx?Id=204">Chemical Engg</a></li>
+                                        <li><a href="display.aspx?Id=205">Computer Sci Engg</a></li>
                                     </ul>
                                 </li>
                             </ul>

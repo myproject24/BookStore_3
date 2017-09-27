@@ -21,9 +21,8 @@ namespace WebApplication1
         protected void btnUpload_Click(object sender, EventArgs e)
         {
 
-            SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\Naveev\\Documents\\Visual Studio 2017\\Projects\\WebApplication1\\WebApplication1\\App_Data\\Database1.mdf\"; Integrated Security=True");
+            SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\Naveev\\Documents\\Visual Studio 2017\\Projects\\BookStore_3\\WebApplication1\\App_Data\\Database1.mdf\"; Integrated Security=True");
             string temp = ClassList.SelectedValue;
-            SqlCommand cmd;
             conn.Open();
             int val = 0;
             if (temp.Equals("School"))

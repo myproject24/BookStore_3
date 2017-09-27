@@ -16,13 +16,22 @@ namespace WebApplication1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["Username"] != null)
+            {
+                withsession.Visible = true;
+                withoutsession.Visible = false;
+            }
+            else
+            {
+                withsession.Visible = false;
+                withoutsession.Visible = true;
+            }
         }
         protected void btnSend_Click(object sender, EventArgs e)
         {
             string username = string.Empty;
             string password = string.Empty;
-            string constr = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\Naveev\\Documents\\Visual Studio 2017\\Projects\\BookStore_3\\WebApplication1\\WebApplication1\\App_Data\\Database1.mdf\"; Integrated Security=True";
+            string constr = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\Naveev\\Documents\\Visual Studio 2017\\Projects\\BookStore_3\\WebApplication1\\App_Data\\Database1.mdf\"; Integrated Security=True";
             using (SqlConnection con = new SqlConnection(constr))
             {
                 using (SqlCommand cmd = new SqlCommand("select * from LoginInfo where Username = @Email"))
@@ -42,23 +51,7 @@ namespace WebApplication1
                 }
             }
             if (!string.IsNullOrEmpty(password))
-            {
-                //MailMessage mm = new MailMessage("naveen20590@gmail.com", UserName.Text.Trim());
-                //mm.Subject = "Password Recovery";
-                //mm.Body = string.Format("Hi {0},<br /><br />Your password is {1}.<br /><br />Thank You.", username, password);
-                //mm.IsBodyHtml = true;
-                //SmtpClient smtp = new SmtpClient();
-                //smtp.Host = "smtp.gmail.com";
-                //smtp.EnableSsl = true;
-                //NetworkCredential NetworkCred = new NetworkCredential();
-                //NetworkCred.UserName = "koushik3210@gmail.com";
-                //NetworkCred.Password = "kirankumart";
-                //smtp.UseDefaultCredentials = false;
-                //smtp.Credentials = NetworkCred;
-                //smtp.Port = 25;
-                //smtp.Host = "127.0.0.1";
-                //smtp.Send(mm);
-
+            {          
                 MailMessage msg = new MailMessage();
                 msg.From = new MailAddress("koushik3210@gmail.com");
                 msg.To.Add(UserName.Text.Trim());
@@ -98,7 +91,9 @@ namespace WebApplication1
 
         protected void signoutBtn_Clicked(object sender, EventArgs e)
         {
-            withoutsession.Visible = false;
+            withsession.Visible = false;
+            withoutsession.Visible = true;
+            Session.RemoveAll();
         }
     }
 }

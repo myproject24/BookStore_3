@@ -38,6 +38,11 @@ namespace WebApplication1
                     withsession.Visible = true;
                     withoutsession.Visible = false;
                 }
+                else
+                {
+                    withsession.Visible = false;
+                    withoutsession.Visible = true;
+                }
                 GetData();
             }
         }
@@ -135,7 +140,111 @@ namespace WebApplication1
             }
             else
             {
-
+                int classIs = mystr[2] - '0';
+                string bname;
+                SqlCommand cmd;
+                SqlDataAdapter da;
+                DataSet ds;
+                switch (mystr[1])
+                {
+                    case '0':
+                        bname = "Electronics & Comm Engg";
+                        if(mystr[0] == '1')
+                        {
+                            cmd = new SqlCommand("select * from CollegeBE where BranchName = " + bname + " Semester = " + classIs, conn);
+                        }
+                        else
+                        {
+                            cmd = new SqlCommand("select * from CollegeME where BranchName = " + bname, conn);
+                        }
+                        cmd = new SqlCommand("select * from CollegeBE where BranchName = " + bname + " Semester = " + classIs, conn);
+                        da = new SqlDataAdapter(cmd);
+                        ds = new DataSet();
+                        da.Fill(ds);
+                        DataList1.DataSource = ds.Tables[0];
+                        DataList1.DataBind();
+                        break;
+                    case '1':
+                        bname = "Mechanical Engg";
+                        if (mystr[0] == '1')
+                        {
+                            cmd = new SqlCommand("select * from CollegeBE where BranchName = " + bname + " Semester = " + classIs, conn);
+                        }
+                        else
+                        {
+                            cmd = new SqlCommand("select * from CollegeME where BranchName = " + bname, conn);
+                        }
+                        da = new SqlDataAdapter(cmd);
+                        ds = new DataSet();
+                        da.Fill(ds);
+                        DataList1.DataSource = ds.Tables[0];
+                        DataList1.DataBind();
+                        break;
+                    case '2':
+                        bname = "Civil Engg";
+                        if (mystr[0] == '1')
+                        {
+                            cmd = new SqlCommand("select * from CollegeBE where BranchName = " + bname + " Semester = " + classIs, conn);
+                        }
+                        else
+                        {
+                            cmd = new SqlCommand("select * from CollegeME where BranchName = " + bname, conn);
+                        }
+                        da = new SqlDataAdapter(cmd);
+                        ds = new DataSet();
+                        da.Fill(ds);
+                        DataList1.DataSource = ds.Tables[0];
+                        DataList1.DataBind();
+                        break;
+                    case '3':
+                        bname = "Electrical Engg";
+                        if (mystr[0] == '1')
+                        {
+                            cmd = new SqlCommand("select * from CollegeBE where BranchName = " + bname + " Semester = " + classIs, conn);
+                        }
+                        else
+                        {
+                            cmd = new SqlCommand("select * from CollegeME where BranchName = " + bname, conn);
+                        }
+                        da = new SqlDataAdapter(cmd);
+                        ds = new DataSet();
+                        da.Fill(ds);
+                        DataList1.DataSource = ds.Tables[0];
+                        DataList1.DataBind();
+                        break;
+                    case '4':
+                        bname = "Chemical Engg";
+                        if (mystr[0] == '1')
+                        {
+                            cmd = new SqlCommand("select * from CollegeBE where BranchName = " + bname + " Semester = " + classIs, conn);
+                        }
+                        else
+                        {
+                            cmd = new SqlCommand("select * from CollegeME where BranchName = " + bname, conn);
+                        }
+                        da = new SqlDataAdapter(cmd);
+                        ds = new DataSet();
+                        da.Fill(ds);
+                        DataList1.DataSource = ds.Tables[0];
+                        DataList1.DataBind();
+                        break;
+                    case '5':
+                        bname = "Computer Sci Engg";
+                        if (mystr[0] == '1')
+                        {
+                            cmd = new SqlCommand("select * from CollegeBE where BranchName = " + bname + " Semester = " + classIs, conn);
+                        }
+                        else
+                        {
+                            cmd = new SqlCommand("select * from CollegeME where BranchName = " + bname, conn);
+                        }
+                        da = new SqlDataAdapter(cmd);
+                        ds = new DataSet();
+                        da.Fill(ds);
+                        DataList1.DataSource = ds.Tables[0];
+                        DataList1.DataBind();
+                        break;
+                }
             }
         }
 
