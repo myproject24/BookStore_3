@@ -15,15 +15,23 @@ namespace WebApplication1
         SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\Naveev\\Documents\\Visual Studio 2017\\Projects\\BookStore_3\\WebApplication1\\App_Data\\Database1.mdf\"; Integrated Security=True");
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(Session["Username"]!=null)
+            if (!IsPostBack)
             {
-                withsession.Visible = true;
-                withoutsession.Visible = false;
-            }
-            else
-            {
-                withsession.Visible = false;
-                withoutsession.Visible = true;
+                if (Session["Username"] != null)
+                {
+                    withsession.Visible = true;
+                    withoutsession.Visible = false;
+                }
+                else
+                {
+                    withsession.Visible = false;
+                    withoutsession.Visible = true;
+                    if (Request.Cookies["UserName"] != null && Request.Cookies["Password"] != null)
+                    {
+                        UserName.Text = Request.Cookies["UserName"].Value;
+                        Password.Attributes["value"] = Request.Cookies["Password"].Value;
+                    }
+                }
             }
         }
 
@@ -58,6 +66,17 @@ namespace WebApplication1
             {
                 FailureText.Text = "Invalid username or password!!";
                 ErrorMessage.Visible = true;
+            }
+            if (chkRememberMe.Checked)
+            {
+                Response.Cookies["UserName"].Expires = DateTime.Now.AddDays(30);
+                Response.Cookies["Password"].Expires = DateTime.Now.AddDays(30);
+            }
+            else
+            {
+                Response.Cookies["UserName"].Expires = DateTime.Now.AddDays(-1);
+                Response.Cookies["Password"].Expires = DateTime.Now.AddDays(-1);
+
             }
         }
 

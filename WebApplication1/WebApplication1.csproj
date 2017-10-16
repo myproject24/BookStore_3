@@ -71,6 +71,7 @@
     </Content>
     <Content Include="display.aspx" />
     <Content Include="forgotpwd.aspx" />
+    <Content Include="Images\bookImage.png" />
     <Content Include="Open_PDF2.aspx" />
     <Content Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
@@ -172,9 +173,7 @@
       <DependentUpon>upload.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Images\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

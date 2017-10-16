@@ -9,6 +9,23 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <title>My Sample Page</title>
+    <script>
+        $(document).ready(function () {
+            $('.dropdown-submenu a.test').on("click", function (e) {
+                $(this).next('ul').toggle();
+                e.stopPropagation();
+                e.preventDefault();
+            });
+        });
+        function imgError(me) {
+            // place here the alternative image
+            var AlterNativeImg = "/Images/bookImage.png";
+
+            // to avoid the case that even the alternative fails        
+            if (AlterNativeImg != me.src)
+                me.src = AlterNativeImg;
+        }
+    </script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -218,7 +235,7 @@
                                 <table class="table_div">
                                     <tr>
                                         <td class="table_rowimg" style="color: #FF0000; font-weight: bold">
-                                            <asp:ImageButton ID="Image1" runat="server" AlternateText="Not found" ImageUrl='<%#Eval("BookImage") %>' CommandName="ViewDetails"></asp:ImageButton>
+                                            <asp:ImageButton ID="Image1" runat="server" onerror="imgError(this)" AlternateText="Not found" ImageUrl='<%#Eval("BookImage") %>' CommandName="ViewDetails"></asp:ImageButton>
                                         </td>
                                     </tr>
                                     <tr>

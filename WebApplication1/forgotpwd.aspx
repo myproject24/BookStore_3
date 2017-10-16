@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src= "https://www.payumoney.com/Api/REST/op/buttonScript" async="true" > </script>
+    <script src="https://www.payumoney.com/Api/REST/op/buttonScript" async="true"> </script>
     <title>My Sample Page</title>
-    
+
 </head>
 <body>
     <form id="form1" runat="server" method="post">
@@ -199,20 +199,26 @@
             <div class="login_form form-horizontal">
 
                 <asp:Label ID="FailureText" runat="server" />
-                <div class="form-group">
+                <div class="form-group row">
                     <div class="col-sm-8">
-                        <asp:TextBox runat="server" ID="UserName" CssClass="form-control" placeholder="Email" required="required" />
+                        <asp:TextBox runat="server" ID="UserName" CssClass="form-control" placeholder="Email" />
+                        
+                    </div>
+                    <div class="col-sm-8">
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" controltovalidate="UserName" validationgroup="PersonalInfoGroup" style="color:red" errormessage="Enter your age." runat="server">
+                        </asp:RequiredFieldValidator>
                     </div>
                 </div>
+                
                 <div class="form-group">
                     <div class="col-sm-6">
-                        <asp:Button ID="btnSend" Text="Send" class="btn btn-primary" runat="server" OnClick="btnSend_Click" />
+                        <asp:Button ID="btnSend" Text="Send" causesvalidation="true" validationgroup="PersonalInfoGroup" class="btn btn-primary" runat="server" OnClick="btnSend_Click" />
                     </div>
                 </div>
             </div>
         </div>
     </form>
-    <div class="=col-sm-6" style="margin-left: 200px; margin-top: 200px;">
+    <%--<div class="=col-sm-6" style="margin-left: 200px; margin-top: 200px;">
         <form action="https://www.paypal.com/cgi-bin/webscr" style="margin-left: 200px; margin-top: 200px;" method="post" target="_top">
 
             <input type="hidden" name="cmd" value="_s-xclick" />
@@ -230,6 +236,6 @@
                 <input type="image" src="https://file.payumoney.com/images/payby_payumoney/new_buttons/submitted/21.png" width="131" height="37">
             </span>
         </span>
-    </div>
+    </div>--%>
 </body>
 </html>

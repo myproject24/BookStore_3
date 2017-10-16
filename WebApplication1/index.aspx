@@ -19,6 +19,14 @@
                 e.preventDefault();
             });
         });
+        function imgError(me) {
+            // place here the alternative image
+            var AlterNativeImg = "/images/emptyimage.gif";
+
+            // to avoid the case that even the alternative fails        
+            if (AlterNativeImg != me.src)
+                me.src = AlterNativeImg;
+        }
     </script>
 </head>
 <body>

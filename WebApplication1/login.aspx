@@ -6,6 +6,7 @@
 
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" href="./Content/Site.css" media='all' />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -212,17 +213,19 @@
                 </div>
                 <div class="form-group">
                     <div class="col-sm-6">
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox" />
-                                Remember me
-                            </label>
-                        </div>
+                            <asp:CheckBox ID="chkRememberMe" runat="server" Text="&nbsp;Remember me" Font-Bold="true"/>
                     </div>
                 </div>
-                <div class="form-group">
-                    <div class="col-sm-6">
+                <div class="form-group row">
+                    <div class="col-md-2">
                         <asp:Button ID="btnSend" Text="Sign In" class="btn btn-primary" runat="server" OnClick="btnSend_Click" />
+                    </div>
+                    <div class="col-md-6">
+                    <div class="col-md-12">
+                        <a style="text-decoration:underline; padding-top:15px; " href="forgotpwd.aspx">Forgot Password?</a>
+                        <%--<asp:HyperLink id="hyperlink1" NavigateUrl="#" Text="hellllllllo" runat="server"/>--%>
+                        <%--<asp:Button ID="Button1" Text="Sign In" class="btn btn-primary" runat="server" OnClick="btnSend_Click" />--%>
+                        </div>
                     </div>
                 </div>
             </div>

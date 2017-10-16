@@ -148,3 +148,7 @@ body {
     margin-top: -150px;
     margin-left: -150px;
 }
+
+.mycheckbox input[type="checkbox"] {
+    margin-right: 5px;
+}
